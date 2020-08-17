@@ -2,7 +2,6 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 
-
 urlpatterns = [
     # 127.0.0.1:8000 ----> local
     # mydjangosite.com ---> online
@@ -27,9 +26,10 @@ urlpatterns = [
     # mydjangosite.com/2/publish ---> online
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
 
-    # path would look like 127.0.0.1:8000/accounts/login ----> local
-    # mydjangosite.com/accounts/login ---> online
-    path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
+    # path would look like 127.0.0.1:8000/accounts/logout ----> local
+    # mydjangosite.com/accounts/logout ---> online
+    path('accounts/logout', auth_views.LogoutView.as_view(), name='logout', kwargs={'next_page': 'post_list'}),
+
 ]
 
 
