@@ -25,5 +25,5 @@ urlpatterns = [
     # mydjangosite.com/accounts/login ---> online
     path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
 
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
 ]

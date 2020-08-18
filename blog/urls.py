@@ -30,6 +30,9 @@ urlpatterns = [
     # mydjangosite.com/accounts/logout ---> online
     path('accounts/logout', auth_views.LogoutView.as_view(), name='logout', kwargs={'next_page': 'post_list'}),
 
+    # path would look like 127.0.0.1:8000/post/2/comment ----> local
+    # mydjangosite.com/post/2/comment ---> online
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ]
 
 
