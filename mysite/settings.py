@@ -30,6 +30,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ALLOWED_HOSTS = []
 LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = 'post_list'
+LOGOUT_REDIRECT_URL = 'post_list'
+
 
 # Application definition
 
