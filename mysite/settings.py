@@ -118,5 +118,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES = [
-    'mysite/blog/static',
+    os.path.join(BASE_DIR, 'static'),
 ]
